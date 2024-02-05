@@ -1,9 +1,10 @@
 // TODO
+const { useState } = React;
 
 
 const App = function () {
-  // const [groceries, setGroceries] = useState(['Cucumber', 'Kale'])
-  const groceries = ['Cucumber', 'Kale']
+  const [groceries, setGroceries] = useState(['Cucumber', 'Kale'])
+  // const groceries = ['Cucumber', 'Kale']
 
   return (
     <div>
@@ -11,10 +12,9 @@ const App = function () {
       <ul>
         {/* JSX expects array of elements!! */}
         {groceries.map((item) => {
-          return <GroceryListItem item = {item}/>
+          return <GroceryListItem eachItem = {item}/>
           })
         }
-
       </ul>
     </div>
   )
@@ -22,15 +22,38 @@ const App = function () {
 
 
 const GroceryListItem = function (props) {
-  const onListItemClick = (event) => {
-    console.log(`You clicked ${event.target.textContent}!`);
+  const [isHovered, setIsHovered] = useState(false);
+
+  //event handler?
+  const onListItemHover = (event) => {
+    setIsHovered(!isHovered);
   }
+  //event handler part 2?
+  const style = {
+    fontWeight: isHovered ? 'bold' : 'normal',
+  };
+
   return (
     <div>
-      <li onClick = {onListItemClick}>{props.item}</li>
+      {/* event listeners directly on jsx element? */}
+      <li style={style} onMouseEnter={onListItemHover} onMouseLeave={onListItemHover}>
+        {props.eachItem}
+      </li>
     </div>
   )
 }
+
+//console logs which list item is clicked (playing around with setting event listeners)
+// const GroceryListItem = function (props) {
+//   const onListItemClick = (event) => {
+//     console.log(`You clicked ${event.target.textContent}!`);
+//   }
+//   return (
+//     <div>
+//       <li onClick = {onListItemClick}>{props.item}</li>
+//     </div>
+//   )
+// }
 
 
 
