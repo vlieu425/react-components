@@ -58,6 +58,51 @@ const GroceryListItem = function (props) {
 
 
 
+
+// const App = function () {
+//   return (
+//     <div>
+//       <h2>My Todo list</h2>
+//       <GroceryListItem groceries={['Cucumber', 'Kale', 'broccoli']}/>
+//     </div>
+//   )
+
+// }
+
+
+// const GroceryListItem = function (props) {
+
+//   return (
+//     <div>
+//       <ul>
+//         <li>
+//           {props.groceries[0]}
+//         </li>
+//         <li>
+//           {props.groceries[1]}
+//         </li>
+//         <li>
+//           {props.groceries[2]}
+//         </li>
+//       </ul>
+//     </div>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const App = function () {
 //   return (
 //     <div>
