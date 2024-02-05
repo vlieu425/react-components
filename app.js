@@ -1,14 +1,27 @@
 // TODO
 const App = function () {
   return (
-    <ul>
-      <li> item 1</li>
-      <li> item 2</li>
-    </ul>
+    <div>
+      <h2>My Todo list</h2>
+      <Cucumbers/>
+      <Kale/>
+    </div>
   )
 
 }
 
+
+const Cucumbers = function () {
+  return (
+    <div>Cucumbers</div>
+  )
+}
+
+const Kale = function () {
+  return (
+    <div>Kale</div>
+  )
+}
 
 
 
